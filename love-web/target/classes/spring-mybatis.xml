@@ -10,7 +10,9 @@
                         http://www.springframework.org/schema/mvc    
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">  
     <!-- 自动扫描 -->  
-    <context:component-scan base-package="help.mygod" />  
+    <context:component-scan base-package="help.mygod">
+    	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>  
     <!-- 引入配置文件 -->  
     <bean id="propertyConfigurer"  
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
@@ -27,8 +29,6 @@
         <property name="initialSize" value="${initialSize}"></property>  
         <!-- 连接池最大数量 -->  
         <property name="maxActive" value="${maxActive}"></property>  
-        <!-- 连接池最大空闲 -->  
-        <property name="maxIdle" value="${maxIdle}"></property>  
         <!-- 连接池最小空闲 -->  
         <property name="minIdle" value="${minIdle}"></property>  
         <!-- 获取连接最大等待时间 -->  

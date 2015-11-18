@@ -14,13 +14,18 @@
   <name>love-web Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-  		<dependency>  
-            <groupId>junit</groupId>  
-            <artifactId>junit</artifactId>  
-            <version>4.11</version>  
-            <!-- 表示开发的时候引入，发布的时候不会加载此包 -->  
-            <scope>test</scope>  
-        </dependency> 
+  		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>love-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
+			<scope>test</scope>
+		</dependency>
      <!-- spring核心包 -->  
         <dependency>  
             <groupId>org.springframework</groupId>  
@@ -96,52 +101,11 @@
             <artifactId>mysql-connector-java</artifactId>  
             <version>5.1.30</version>  
         </dependency>  
-        <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->  
-        <dependency>  
-            <groupId>commons-dbcp</groupId>  
-            <artifactId>commons-dbcp</artifactId>  
-            <version>1.2.2</version>  
-        </dependency>  
         <!-- JSTL标签类 -->  
         <dependency>  
             <groupId>jstl</groupId>  
             <artifactId>jstl</artifactId>  
             <version>1.2</version>  
-        </dependency>  
-        <!-- 日志文件管理包 -->  
-        <!-- log start -->  
-        <dependency>  
-            <groupId>log4j</groupId>  
-            <artifactId>log4j</artifactId>  
-            <version>${log4j.version}</version>  
-        </dependency>  
-          
-          
-        <!-- 格式化对象，方便输出日志 -->  
-        <dependency>  
-            <groupId>com.alibaba</groupId>  
-            <artifactId>fastjson</artifactId>  
-            <version>1.1.41</version>  
-        </dependency>  
-  
-  
-        <dependency>  
-            <groupId>org.slf4j</groupId>  
-            <artifactId>slf4j-api</artifactId>  
-            <version>${slf4j.version}</version>  
-        </dependency>  
-  
-        <dependency>  
-            <groupId>org.slf4j</groupId>  
-            <artifactId>slf4j-log4j12</artifactId>  
-            <version>${slf4j.version}</version>  
-        </dependency>  
-        <!-- log end -->  
-        <!-- 映入JSON -->  
-        <dependency>  
-            <groupId>org.codehaus.jackson</groupId>  
-            <artifactId>jackson-mapper-asl</artifactId>  
-            <version>1.9.13</version>  
         </dependency>  
         <!-- 上传组件包 -->  
         <dependency>  
