@@ -17,6 +17,7 @@
 		<mybatis.version>3.2.6</mybatis.version>
 		<!-- log4j日志文件管理包版本 -->
 		<log4j.version>2.4.1</log4j.version>
+		<jersey.version>2.17</jersey.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -25,5 +26,6 @@
 	<modules>
 		<module>love-core</module>
 		<module>love-web</module>
+		<module>weixin</module>
 	</modules>
 </project>
