@@ -50,7 +50,9 @@
 	    <property name="maxPoolPreparedStatementPerConnectionSize" value="20" /> -->
 	 
 	    <!-- 配置监控统计拦截的filters -->
-	  <property name="filters" value="stat" />
+<!-- 	  <property name="filters" value="stat" /> -->
+		<property name="filters" value="config" />
+		<property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${publickey}" />
 	</bean>
   
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->  
