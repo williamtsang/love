@@ -2,6 +2,7 @@ package help.mygod.rest.weixin;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -15,6 +16,7 @@ import help.mygod.weixin.service.receive.MsgTypeEnum;
 import help.mygod.weixin.service.receive.event.EventEnum;
 import help.mygod.weixin.service.receive.event.menu.EventKeyEnum;
 
+@WebListener
 public class InitHandle implements ServletContextListener {
 
 	@Override

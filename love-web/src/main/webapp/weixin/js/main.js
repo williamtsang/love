@@ -15,10 +15,10 @@
     G.params = {};
     // 微信默认分享配置
     G.wxData = {
-        title: '金蝶互联网金融',
-        desc: '推荐你关注金蝶互联网金融，国内面向企业理财、贷款的第一互联网金融平台',
+        title: '天天天蓝',
+        desc: '每一天，都是蓝天，上帝保佑你！',
         link: G.base,
-        imgUrl: G.base + 'img/kdjr_8.png'
+        imgUrl: G.base + 'img/help.jpg'
     };
 })(window.G = {});
 
@@ -75,7 +75,7 @@ function(app, wx){
                 debug: false,
                 jsApiList: jsApiList.slice(0)
             };
-        $.get('/api/v1/oauth/signature?url=' + encodeURIComponent(location.href.split('#')[0]), function(d){
+        $.get('/api/v1/web/signature?url=' + encodeURIComponent(location.href.split('#')[0]), function(d){
             var data;
             if (d.status === 200) {
                 data = d.data;
@@ -148,5 +148,5 @@ function(app, wx){
     });
 
     // go page
-    app.go( !location.hash ? (G.env !== 'weixin' && !app.storage.get('app_viewstart')) ? "role" : 'login' : location.hash, app.session.get('app_page_params') );
+    app.go("role");
 });

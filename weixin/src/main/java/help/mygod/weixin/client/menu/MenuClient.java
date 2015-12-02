@@ -41,7 +41,7 @@ public class MenuClient{
 	private final static String DELETE_QUERY_URL="https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=";
 	
 	public static void main(String [] args) throws UnsupportedEncodingException{
-		//System.out.println(URLEncoder.encode("http://8.kingdee.com/m/weixinOAuth?scheme=https","utf-8"));
+		//System.out.println(URLEncoder.encode("http://william.mygod.help/m/weixinOAuth?scheme=https","utf-8"));
 		//System.out.println(URLEncoder.encode("index?app_type=co","utf-8"));
 		//System.out.println(URLEncoder.encode("index?app_type=p","utf-8")); 
 		//System.out.println(URLEncoder.encode(URLEncoder.encode("index?app_type=co","utf-8"),"utf-8"));
@@ -51,24 +51,10 @@ public class MenuClient{
 		queryMenu();
 //		deleteMenu();
 		//queryMenu();
-		//https://8.kingdee.com/m/#co/home
-		//https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx36d6366ae9633b68&redirect_uri=https://8.kingdee.com/m/weixinOAuth&response_type=code&scope=snsapi_base&state=co/home#wechat_redirect
+		//https://william.mygod.help/m/#co/home
+		//https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx36d6366ae9633b68&redirect_uri=https://william.mygod.help/m/weixinOAuth&response_type=code&scope=snsapi_base&state=co/home#wechat_redirect
 	}
 	
-	public static void createMenu(){
-		String menuJson= 
-		"{" + "\"button\":[" + 
-			"{" + "   \"type\":\"view\"," + "   \"name\":\"红包\"," + "   \"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=https://8.kingdee.com/m/weixinOAuth&response_type=code&scope=snsapi_base&state=invite#wechat_redirect\""+ "}," + 
-			"{" + "   \"type\":\"click\"," + "   \"name\":\"绑定用户\"," + "   \"key\":\"KEY_USER_BIND\"" + "}," +  
-			"{" + "     \"name\":\"菜单\"," + "     \"sub_button\":[" 
-														  + "     {	" + "         \"type\":\"view\"," + "         \"name\":\"收益查询\"," + "         \"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=https://8.kingdee.com/m/weixinOAuth&response_type=code&scope=snsapi_base&state=co/home#wechat_redirect\"" + "      },"
-														  + "     {" + "         \"type\":\"view\"," + "         \"name\":\"视频\"," + "         \"url\":\"http://v.qq.com/\"" + "      },"
-														  + "     {" + "         \"type\":\"click\"," + "         \"name\":\"取得图片信息\"," + "         \"key\":\"KEY_IMG_BIND\"" + "      }" +
-										  		"]" + " }" +
-		"]" + "}";
-		String result = RestUtil.postJson(POST_CREATE_URL + AccessTokenClient.getInstance().getAccessToken(),menuJson,String.class);;
-		System.out.println(result);
-	}
 	
    public static void queryMenu(){
 		String result = RestUtil.getJson(GET_QUERY_URL + AccessTokenClient.getInstance().getAccessToken(),String.class);;
@@ -86,13 +72,13 @@ public class MenuClient{
 			            + "{"
 			                + "\"type\": \"view\"," 
 			                + "\"name\": \"曾文亮\"," 
-			                //+ "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://8.kingdee.com/m/weixinOAuth?type=1&scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=bs201501#wechat_redirect\""
+			                //+ "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://william.mygod.help/m/weixinOAuth?type=1&scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=bs201501#wechat_redirect\""
 			                //+ "\"url\": \"http://mp.weixin.qq.com/s?__biz=MzA4MDkyNDgzNw==&mid=204364536&idx=1&sn=a42294bb5315ac5a870d03ea2719b75d#rd\""
-			                //+ "\"url\": \"http://8.kingdee.com/spread/ali20150312\""
-			                //+ "\"url\": \"http://8.kingdee.com/m/#bs201508 \""
-			                //+ "\"url\": \"http://8.kingdee.com/m/#bs201506\""
-			                + "\"url\": \"http://8.kingdee.com/m/#register\""
-			                //+ "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://8.kingdee.com/m/weixinOAuth?type=1&scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=" + URLEncoder.encode("bs201506","utf-8") + "#wechat_redirect\""
+			                //+ "\"url\": \"http://william.mygod.help/spread/ali20150312\""
+			                //+ "\"url\": \"http://william.mygod.help/m/#bs201508 \""
+			                //+ "\"url\": \"http://william.mygod.help/m/#bs201506\""
+			                + "\"url\": \"http://william.mygod.help/weixin/index.html\""
+			                //+ "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://william.mygod.help/m/weixinOAuth?type=1&scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=" + URLEncoder.encode("bs201506","utf-8") + "#wechat_redirect\""
 			            + "},"
 			            + "{"
 			                + "\"name\": \"我要赚钱\"," 
@@ -100,12 +86,12 @@ public class MenuClient{
 				                    + "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"企业理财\"," 
-			                        + "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://8.kingdee.com/m/weixinOAuth?scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=" + URLEncoder.encode("index?app_type=co","utf-8") + "#wechat_redirect\""
+			                        + "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://william.mygod.help/m/weixinOAuth?scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=" + URLEncoder.encode("index?app_type=co","utf-8") + "#wechat_redirect\""
 				                    + "},"
 				                    + "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"个人理财\"," 
-			                        + "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://8.kingdee.com/m/weixinOAuth?scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=" + URLEncoder.encode("index?app_type=p","utf-8") + "#wechat_redirect\""
+			                        + "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://william.mygod.help/m/weixinOAuth?scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=" + URLEncoder.encode("index?app_type=p","utf-8") + "#wechat_redirect\""
 			                    + "}," 
 			                    + "{"
 				                    + "\"type\": \"click\"," 
@@ -120,7 +106,7 @@ public class MenuClient{
 			                    + "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"安全保障\"," 
-			                        + "\"url\": \"http://8.kingdee.com/m/loan/all-item.html\""
+			                        + "\"url\": \"http://william.mygod.help/m/loan/all-item.html\""
 			                    + "}"
 			                + "]"
 			            + "},"
@@ -130,17 +116,17 @@ public class MenuClient{
 			                    /*+ "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"产品精选\"," 
-			                        + "\"url\": \"http://8.kingdee.com/m/loan/item-detail.html\""
+			                        + "\"url\": \"http://william.mygod.help/m/loan/item-detail.html\""
 			                    + "},"
 			                    + "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"金蝶阿里信用贷\"," 
-			                        + "\"url\": \"http://8.kingdee.com/m/loan/ali.html\""
+			                        + "\"url\": \"http://william.mygod.help/m/loan/ali.html\""
 			                    + "},"
 			                    + "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"金蝶招行信用贷\"," 
-			                        + "\"url\": \"http://8.kingdee.com/m/loan/zhaoshang.html\""
+			                        + "\"url\": \"http://william.mygod.help/m/loan/zhaoshang.html\""
 			                    + "}," 
 			                    + "{"
 			                        + "\"type\": \"view\"," 
@@ -150,22 +136,22 @@ public class MenuClient{
 				                /*+ "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"金蝶员工公职贷\"," 
-			                        + "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://8.kingdee.com/m/weixinOAuth?type=1&scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=" + URLEncoder.encode("mloan/staff_loan","utf-8") + "#wechat_redirect\""
+			                        + "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://william.mygod.help/m/weixinOAuth?type=1&scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=" + URLEncoder.encode("mloan/staff_loan","utf-8") + "#wechat_redirect\""
 			                    + "},"*/
 				                + "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"蚂蚁微贷大数贷\"," 
-			                        + "\"url\": \"http://8.kingdee.com/m/#mloan/product_detail?productId=84\""
+			                        + "\"url\": \"http://william.mygod.help/m/#mloan/product_detail?productId=84\""
 			                    + "},"
 			                    + "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"平安银行数据贷\"," 
-			                        + "\"url\": \"http://8.kingdee.com/m/#mloan/product_detail?productId=142\""
+			                        + "\"url\": \"http://william.mygod.help/m/#mloan/product_detail?productId=142\""
 			                    + "}," 
 			                    + "{"
 			                        + "\"type\": \"view\"," 
 			                        + "\"name\": \"贷款产品集中营\"," 
-			                        + "\"url\": \"http://8.kingdee.com/m/#mloan/product\""
+			                        + "\"url\": \"http://william.mygod.help/m/#mloan/product\""
 			                    + "}"
 			                + "]"
 			            + "}"
