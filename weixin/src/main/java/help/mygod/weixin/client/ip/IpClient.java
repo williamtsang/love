@@ -3,8 +3,6 @@ package help.mygod.weixin.client.ip;
 
 import java.util.List;
 
-import javax.ws.rs.core.Response;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

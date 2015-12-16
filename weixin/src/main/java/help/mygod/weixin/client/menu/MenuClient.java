@@ -57,12 +57,12 @@ public class MenuClient{
 	
 	
    public static void queryMenu(){
-		String result = RestUtil.getJson(GET_QUERY_URL + AccessTokenClient.getInstance().getAccessToken(),String.class);;
+		String result = RestUtil.getJson(GET_QUERY_URL + AccessTokenClient.getInstance().getAccessToken());
 		System.out.println(result);
    }
    
    public static void  deleteMenu(){
-		String result = RestUtil.getJson(DELETE_QUERY_URL + AccessTokenClient.getInstance().getAccessToken(),String.class);;
+		String result = RestUtil.getJson(DELETE_QUERY_URL + AccessTokenClient.getInstance().getAccessToken());
 		System.out.println(result);
    }
    public static void createMenu2() throws UnsupportedEncodingException{
@@ -85,7 +85,7 @@ public class MenuClient{
 			                + "\"sub_button\": ["
 				                    + "{"
 			                        + "\"type\": \"view\"," 
-			                        + "\"name\": \"企业理财\"," 
+			                        + "\"name\": \"网银看板成长社区\"," 
 			                        + "\"url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + Constant.APP_ID + "&redirect_uri=" + URLEncoder.encode("http://william.mygod.help/m/weixinOAuth?scheme=https","utf-8") + "&response_type=code&scope=snsapi_base&state=" + URLEncoder.encode("index?app_type=co","utf-8") + "#wechat_redirect\""
 				                    + "},"
 				                    + "{"
@@ -157,7 +157,7 @@ public class MenuClient{
 			            + "}"
 			        + "]"
 			    + "}";
-		String result = RestUtil.postJson(POST_CREATE_URL + AccessTokenClient.getInstance().getAccessToken(),menuJson,String.class);;
+		String result = RestUtil.postJson(POST_CREATE_URL + AccessTokenClient.getInstance().getAccessToken(),menuJson);;
 		System.out.println(result);
 	}
 	

@@ -4,8 +4,6 @@ package help.mygod.weixin.client.oauth;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.alibaba.fastjson.JSONObject;
-
 import help.mygod.weixin.common.Constant;
 import help.mygod.weixin.common.util.RestUtil;
 
@@ -30,8 +28,7 @@ public class AccessTokenClient{
 		if (logger.isInfoEnabled()) {
 			logger.info("第二步：通过code换取网页授权access_token（与基础的access_token不同）");
 		}
-		String temp = RestUtil.get(url,String.class);
-		return JSONObject.parseObject(temp, AccessTokenRsp.class);
+		return RestUtil.get(url,AccessTokenRsp.class);
 	}
 	
 }

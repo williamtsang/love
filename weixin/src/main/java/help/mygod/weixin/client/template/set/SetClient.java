@@ -30,6 +30,6 @@ public class SetClient {
 		if(logger.isInfoEnabled()){
 			logger.info("设置所属行业，请求的参数为:" + StrUtil.reflectObj(industry));
 		}
-		RestUtil.postJson(TEMPLATE_SET_URL + AccessTokenClient.getInstance().getAccessToken(), JSONObject.toJSONString(industry),String.class);
+		RestUtil.postJson(TEMPLATE_SET_URL + AccessTokenClient.getInstance().getAccessToken(), JSONObject.toJSONString(industry));
 	}
 }

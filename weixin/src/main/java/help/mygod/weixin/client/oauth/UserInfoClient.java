@@ -4,8 +4,6 @@ package help.mygod.weixin.client.oauth;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.alibaba.fastjson.JSONObject;
-
 import help.mygod.weixin.common.util.RestUtil;
 
 
@@ -30,8 +28,7 @@ public class UserInfoClient{
 			logger.info("第四步：拉取用户信息(需scope为 snsapi_userinfo)");
 		}
 
-		String temp = RestUtil.get(url,String.class);
-		return JSONObject.parseObject(temp, UserInfoRsp.class);
+		return RestUtil.get(url,UserInfoRsp.class);
 	}
 	
 }

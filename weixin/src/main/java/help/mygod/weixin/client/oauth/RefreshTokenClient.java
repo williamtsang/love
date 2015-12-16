@@ -4,8 +4,6 @@ package help.mygod.weixin.client.oauth;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.alibaba.fastjson.JSONObject;
-
 import help.mygod.weixin.common.Constant;
 import help.mygod.weixin.common.util.RestUtil;
 
@@ -31,8 +29,7 @@ public class RefreshTokenClient{
 			logger.info("第三步：刷新access_token（如果需要）");
 		}
 
-		String temp = RestUtil.get(url,String.class);
-		return JSONObject.parseObject(temp, RefreshTokenRsp.class);
+		return RestUtil.get(url,RefreshTokenRsp.class);
 	}
 	
 }
